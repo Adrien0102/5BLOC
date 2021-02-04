@@ -35,42 +35,6 @@ class App extends Component {
     }
   };
 
-  runExample = async () => {
-    const { accounts, contract } = this.state;
-
-    // Stores a given value, 5 by default.
-    await contract.methods.set(5).send({ from: accounts[0] });
-
-    // Get the value from the contract to prove it worked.
-    const response = await contract.methods.get().call();
-
-    // Update state with the result.
-    this.setState({ storageValue: response });
-  };
-
-  addToSimpleStorage() {
-    if (this.state.simpleStorageInstance && this.state.accounts) {
-      const value = this.storageAmountInput.value;
-      this.state.simpleStorageInstance.set(value, {from: this.state.accounts[0]})
-        .then((result) => {
-          return this.state.simpleStorageInstance.get.call(this.state.accounts[0])
-        }).then((result) => {
-          this.setState(prevState => ({
-            ...prevState,
-            storageValue: result.c[0]
-          }));
-        }).catch((err) => {
-          console.log('error');
-          console.log(err);
-        });
-    } else {
-      this.setState(prevState => ({
-        ...prevState,
-        error: new Error('simple storage instance not loaded')
-      }))
-    }
-  }
-
   render() {
     if (!this.state.web3) {
       return <div>Loading Web3, accounts, and contract...</div>;
@@ -87,7 +51,7 @@ class App extends Component {
             className="pure-button"
             onClick={(e) => {
               e.preventDefault();
-              this.addToSimpleStorage()
+              console.log("click")
             }}
           >
             Set Storage
