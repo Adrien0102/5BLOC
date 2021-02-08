@@ -1,6 +1,5 @@
-// var Token = artifacts.require("Token");
+var Token = artifacts.require("Token");
 
 module.exports = function(deployer) {
-  // deployer.deploy(Token);
+  deployer.deploy(Token);
 };
-
