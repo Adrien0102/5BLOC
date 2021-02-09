@@ -4,6 +4,8 @@ pragma solidity >=0.6.0 <0.8.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
+// ERC721 Doc => https://eips.ethereum.org/EIPS/eip-721
+
 contract HouseItem is ERC721 {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
@@ -26,14 +28,14 @@ contract HouseItem is ERC721 {
     Image: Image of coupon 
     …. You can add up to 20 extra fields so whatever information you want can go here
     */
-    function awardItem(address house, string memory tokenURI)
+    function generateToken(address supplier, string memory tokenURI)
         public
         returns (uint256)
     {
         _tokenIds.increment();
 
         uint256 newItemId = _tokenIds.current();
-        _mint(house, newItemId);
+        _mint(supplier, newItemId);
         _setTokenURI(newItemId, tokenURI);
 
         return newItemId;
