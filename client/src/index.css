@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected.selectedTab {
+  background-color: rgb(92, 92, 92); /*Overriden property*/
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item:hover.hoverTab {
+  background-color: rgb(92, 92, 92); /*Overriden property*/
+}

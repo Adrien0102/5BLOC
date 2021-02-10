@@ -5,8 +5,11 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "antd": "^4.12.2",
+    "bootstrap": "^4.6.0",
     "formik": "^2.2.6",
+    "mdbreact": "^5.0.1",
     "react": "16.11.0",
+    "react-bootstrap": "^1.4.3",
     "react-dom": "16.11.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.2.0",
